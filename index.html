@@ -6,6 +6,8 @@
     <!-- Bootstrap -->
     <link href="http://vadimg.com/twitter-bootstrap-wizard-example/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="http://vadimg.com/twitter-bootstrap-wizard-example/prettify.css" rel="stylesheet">
+	<!-- 	<link href="http://www.phpform.org/formbuilder/colors/color1/view.css" rel="stylesheet"> -->
+	
   </head>
   <body>
     <div class='container'>
@@ -15,14 +17,16 @@
 			  <div class="page-header">
 	            <h1>Morning Check</h1>
 	          </div>
-	
+				<div id="datestring">
+				</div>
 				<div id="rootwizard">
 					<div class="navbar">
 					  <div class="navbar-inner">
 					    <div class="container">
+
 					<ul>
-					  	<li><a href="#tab1" data-toggle="tab">First</a></li>
-						<li><a href="#tab2" data-toggle="tab">Second</a></li>
+					  	<li><a href="#tab1" data-toggle="tab">Start</a></li>
+						<li><a href="#tab2" data-toggle="tab">Voice - Voice Service Alarm Map</a></li>
 						<li><a href="#tab3" data-toggle="tab">Third</a></li>
 						<li><a href="#tab4" data-toggle="tab">Forth</a></li>
 						<li><a href="#tab5" data-toggle="tab">Fifth</a></li>
@@ -37,12 +41,33 @@
 					</div>
 					<div class="tab-content">
 					    <div class="tab-pane" id="tab1">
+					    	Bitte erst auf allen folgenden Seiten einloggen.<p />
+					    	
+					    	<ul>
+					    		<li><a href="https://tnpm.kabeldeutschland.de:16311/ibm/console/login.do?action=secure" target="_blank" >NetCool</a></li>
+					      	</ul>
+					  <!--    	
+					  https://tnpm.kabeldeutschland.de:16311/ibm/action/launch/?pageID=tnpm.console.topology.performance.network.resourceGroups&timezone=GMT+01:00&user=NOC&gr=true&gdm=true&reporterId=101173941&groupId=214643919&startDate=2016-03-09&period=daily& 
+					
 					      	<p>
-						      <input type='text' name='date' id='date' placeholder='Bitte Datum anpassen!'>
+						      <input type='text' name='date' id='date' placeholder='2016-03-09'>
 						    </p>
+						      -->
 					    </div>
 					    <div class="tab-pane" id="tab2">
+					    	<ul>
+					    		<li><a href="https://dash.kabeldeutschland.de:8080/ibm/console/taskbar.do?pageID=com.ibm.isclite.admin.PortletPicker.navigationElement.pagelayoutA.modified.ay8gf5eK3tsCnUNs6duxihP1379674976356&moduleRef=com.ibm.isclite.global.custom.module&ISC.TID=1433829657461&XSS=i9mBq8fDNmIcLNsA7wgWbsL#tip.1433829659239" target="_blank" >Voice Service Alarm Map (NetCool)</a></li>
+					      	</ul>
+							<div class="alert alert-info">
+							  <strong>Achtung!</strong> Es sind alle Critical & Major events zu pruefen & ggfls Auftraege einstellen.<p />
+							</div>	
+							<div id="voice_dash">
+							
+						    <input type="radio" name="gender" value="male" checked> Male<br>
+						    <input type="radio" name="gender" value="female"> Female<br>
+							<textarea id="voice_dash_note" name="voice_dash_note" class="element textarea small"></textarea> 
 
+							</div>											      	
 					    </div>
 						<div class="tab-pane" id="tab3">
 							3
@@ -77,24 +102,35 @@
 	<script src="http://vadimg.com/twitter-bootstrap-wizard-example/prettify.js"></script>
 	<script>
 	$(document).ready(function() {
+		var MyDate = new Date();
+		var MyDateString;
+
+		MyDateString = MyDate.getFullYear() + '-'
+					 + ('0' + (MyDate.getMonth()+1)).slice(-2) + '-'
+					 + ('0' + MyDate.getDate()).slice(-2)
+		
+			
+		$('#datestring').html(MyDateString);
+	
 	  	$('#rootwizard').bootstrapWizard({onNext: function(tab, navigation, index) {
-				if(index==2) {
+				if(index==1) {
 					// Make sure we entered the name
-					if(!$('#name').val()) {
-						alert('You must enter your name');
-						$('#name').focus();
+					if(!$('#datestring').html()) {
+						alert('Datestring is not set! ERROR');
+						$('#datestring').focus();
 						return false;
 					}
 				}
 				
 				// Set the name for the next tab
-				$('#tab2').html('Hello, ' + $('#name').val());
+				$('#datefinal').html('Hello, ' + $('#name').val());
 				
 			}, onTabShow: function(tab, navigation, index) {
 				var $total = navigation.find('li').length;
 				var $current = index+1;
 				var $percent = ($current/$total) * 100;
 				$('#rootwizard').find('.bar').css({width:$percent+'%'});
+				
 			}});	
 		window.prettyPrint && prettyPrint()
 	});	
