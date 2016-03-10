@@ -289,21 +289,27 @@
 						
 						
 						<div class="tab-pane" id="tab12">
-							<div class="alert alert-success">
-						     Dieser HTML formatierter Text kann direkt als Ergebniss in die Excel Tabelle eingetragen werden.
-						    </div>
+							
 					    </div>					    
 
 					</div>	
 				</div>
 
 			</section>
-<!--			
+			
 		    <div class="alert alert-warning">
+		    	<strong>ToDo:</strong><br />
+				<ul>
+					<li class="line" data-line="6"><p><strong>Proviso Links anpassen</strong></p></li>
+					<li class="line" data-line="7"><p><strong>Cacti Links</strong></p></li>
+					<li class="line" data-line="8"><p><strong>Alle Links Überprüfen</strong></p></li>
+				</ul>		    	
+<!--		    	
 	    	 Es muss bei jedem fehlgeschlagendem Check ein Note in das Comment feld eingetragen werden.<br />
-	    	 Wenn dieser Feld leer bleibt, wird davon ausgegangen das der Check OK war.<br />
+	    	 Wenn dieser Feld leer bleibt, wird davon ausgegangen das der Check OK war.<br /> -->
 	    	</div>			
--->
+
+
  		</div>
 	</div>
     <script src="http://code.jquery.com/jquery-latest.js"></script>
@@ -388,16 +394,16 @@
 									
 					report = report + '\n&lt;p /> &lt;h3>WiFi&lt;/h3>&lt;p />';	
 					if($('#wifi_dash_note').val()) {
-						report = report + '\n&lt;br />' + 'Wifi Wifi Service Dashboard:' + $('#wifi_dash_note').val()
+						report = report + '\n&lt;br />' + 'Wifi Wifi Service Dashboard:  ' + $('#wifi_dash_note').val()
 					}					
 					if($('#wifi_laptop_note').val()) {
-						report = report + '\n&lt;br />' + 'Wifi Test Laptop:' + $('#wifi_laptop_note').val()
+						report = report + '\n&lt;br />' + 'Wifi Test Laptop:  ' + $('#wifi_laptop_note').val()
 					}
 					if($('#wifi_spirent_note').val()) {
-						report = report + '\n&lt;br />' + 'Wifi Spirent Probe:' + $('#wifi_spirent_note').val()
+						report = report + '\n&lt;br />' + 'Wifi Spirent Probe:  ' + $('#wifi_spirent_note').val()
 					}
 					
-					$('#tab12').append('<pre class="prettyprint linenums">' + report +'</pre>');
+					$('#tab12').html('<div class="alert alert-success"> Dieser HTML formatierter Text kann direkt als Ergebniss in die Excel Tabelle eingetragen werden.  </div>\n<br /><pre class="prettyprint linenums">' + report +'</pre>');
 				}
 				
 				// Set the name for the next tab
