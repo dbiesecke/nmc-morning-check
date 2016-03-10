@@ -66,18 +66,50 @@
 					</div>
 					<div class="tab-content">
 						
+
 						
 					    <div class="tab-pane" id="tab1">
-							<div class="alert alert-success">
-						    	<ul>
-						    		<li><a href="https://tnpm.kabeldeutschland.de:16311/ibm/console/login.do?action=secure" target="_blank" >NetCool</a></li>
-						    		<li><a href="http://10.16.8.66/cacti/plugins/weathermap/weathermap-cacti-plugin.php" target="_blank" >Cacti</a></li>
-						      	</ul>							  
-							</div>					    	
-					    	<div class="alert alert-info">
-						    	Bitte erst auf allen folgenden Seiten einloggen.<p />
-						    	Benutzerkennungen sind im <strong> <a href="http://bereichscenter.kabeldeutschland.de/Bereichsintern/2600i/ts/c_n_o/nmc/Lists/Benutzerkennungen/AllItems.aspx" target="_blank" >Sharepoint</a></strong> zu finden.
-					      	</div>
+					    							
+						<th style="width:34px"><img src="http://www.w3schools.com/images/lamp.jpg" alt="Note" style="height:32px;width:32px"></th>
+						Dieser kleine Wizard führt euch durch alle einzelnen Steps des Morning Checks & generiert euch die passenden Links.	Jeder Check kann mit einem Comment versehen werden, daraus wird ende ein Report generiert. 
+						 <p /><br />
+						<div class="alert alert-error">
+					    	<ul>
+					    		<li>Für jeden Check müsst ihr die im Grünen Feld hinterlegten Links öffnen! </li>						
+	     						<li>Falls Ihr bei dem Jeweiligem Check etwas endeckt macht ihr ein Vermerkt im Roten Kommentar feld</li>
+								<li><strong>Bitte beachtet dabei die Arbeitsanweisungen im blauen Feld & die hinterlegte Screenshots.</strong></li>
+							</ul>
+						</div>						 
+	
+							
+				    	<div class="alert alert-info">
+				    	 Infos:	
+					    	 <ul>
+						    	<li>Bitte erst auf allen folgenden Seiten einloggen.</li>
+						    	<li>Benutzerkennungen sind im <strong> <a href="http://bereichscenter.kabeldeutschland.de/Bereichsintern/2600i/ts/c_n_o/nmc/Lists/Benutzerkennungen/AllItems.aspx" target="_blank" >Sharepoint</a></strong> zu finden. </li>
+					      	</ul>
+				      	</div>
+
+						<div class="alert alert-success">
+							Links:
+					    	<ul>
+					    		<li><a href="https://tnpm.kabeldeutschland.de:16311/ibm/console/login.do?action=secure" target="_blank" >NetCool</a></li>
+					    		<li><a href="http://10.16.8.66/cacti/plugins/weathermap/weathermap-cacti-plugin.php" target="_blank" >Cacti</a></li>
+					      	</ul>							  
+						</div>	
+						
+					    <div class="alert alert-warning ">
+					    	<strong>ToDo:</strong><br />
+							<ul>
+								<li class="line" data-line="6"><p><strong>Proviso Links anpassen</strong></p></li>
+								<li class="line" data-line="7"><p><strong>Cacti Links</strong></p></li>
+								<li class="line" data-line="8"><p><strong>Alle Links Überprüfen</strong></p></li>
+							</ul>		    	
+			<!--		    	
+				    	 Es muss bei jedem fehlgeschlagendem Check ein Note in das Comment feld eingetragen werden.<br />
+				    	 Wenn dieser Feld leer bleibt, wird davon ausgegangen das der Check OK war.<br /> -->
+				    	</div>						
+						
 					    </div>
 					    
 					    <div class="tab-pane" id="tab2">
@@ -291,23 +323,18 @@
 						<div class="tab-pane" id="tab12">
 							
 					    </div>					    
-
+						<ul class="pager wizard">
+							<li class="previous first" style="display:none;"><a href="#">First</a></li>
+							<li class="previous"><a href="#">Previous</a></li>
+							<li class="next last" style="display:none;"><a href="#">Last</a></li>
+						  	<li class="next"><a href="#">Next</a></li>
+						</ul>
 					</div>	
 				</div>
 
 			</section>
 			
-		    <div class="alert alert-warning">
-		    	<strong>ToDo:</strong><br />
-				<ul>
-					<li class="line" data-line="6"><p><strong>Proviso Links anpassen</strong></p></li>
-					<li class="line" data-line="7"><p><strong>Cacti Links</strong></p></li>
-					<li class="line" data-line="8"><p><strong>Alle Links Überprüfen</strong></p></li>
-				</ul>		    	
-<!--		    	
-	    	 Es muss bei jedem fehlgeschlagendem Check ein Note in das Comment feld eingetragen werden.<br />
-	    	 Wenn dieser Feld leer bleibt, wird davon ausgegangen das der Check OK war.<br /> -->
-	    	</div>			
+			
 
 
  		</div>
