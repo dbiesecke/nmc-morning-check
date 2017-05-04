@@ -427,50 +427,50 @@ ol.linenums li {
 					// Make sure we entered the name
 					var report = '';
 					
-					report = '&lt;h3>KAV&lt;/h3>&lt;p />';
+					report = '\n\tKAV\n'+ '\n';
 					
 					if($('#voice_dash_note').val()) {
-						report = report + '\n&lt;br />' + 'KAV Service Map:  ' + $('#voice_dash_note').val()
+						report = report  + 'KAV Service Map:  ' + $('#voice_dash_note').val() + '\n'
 					}
 
 					if($('#voice_ims_note').val()) {
-						report = report + '\n&lt;br />' + 'KAV IMS Subscriber Registrations:  ' + $('#voice_ims_note').val()
+						report = report + 'KAV IMS Subscriber Registrations:  ' + $('#voice_ims_note').val() + '\n'
 					}
 					
 					if($('#voice_safari_note').val()) {
-						report = report + '\n&lt;br />' + 'KAV SAFARI unregistered Subscriber:  ' + $('#voice_safari_note').val()
+						report = report + 'KAV SAFARI unregistered Subscriber:  ' + $('#voice_safari_note').val()+ '\n'
 					}
 					if($('#voice_crse_note').val()) {
-						report = report + '\n&lt;br />' + 'KAV CRSE Baseline:  ' + $('#voice_crse_note').val()
+						report = report + 'KAV CRSE Baseline:  ' + $('#voice_crse_note').val()+ '\n'
 					}
 					
-					report = report + '\n&lt;p /> &lt;h3>KAI&lt;/h3>&lt;p />';
+					report = report + '\n\tKAI\n'+ '\n';
 					
 					// KAI 
 					
 					if($('#kai_dash_note').val()) {
-						report = report + '\n&lt;br />' + 'KAI Internet Service Quality Dashboard:  ' + $('#kai_dash_note').val()
+						report = report +  'KAI Internet Service Quality Dashboard:  ' + $('#kai_dash_note').val()+ '\n'
 					}
 					// if($('#kai_cacti_note').val()) {
 					// 	report = report + '\n&lt;br />' + 'KAI Cacti:  ' + $('#kai_cacti_note').val()
 					// }
 					
 					if($('#kai_cgn_note').val()) {
-						report = report + '\n&lt;br />' + 'KAI CGN:  ' + $('#kai_cgn_note').val()
+						report = report  + 'KAI CGN:  ' + $('#kai_cgn_note').val()+ '\n'
 					}
 									
-					report = report + '\n&lt;p /> &lt;h3>WiFi&lt;/h3>&lt;p />';	
+					report = report + '\n\tWIFI'+ '\n';	
 					if($('#wifi_dash_note').val()) {
-						report = report + '\n&lt;br />' + 'Wifi Wifi Service Dashboard:  ' + $('#wifi_dash_note').val()
+						report = report + 'Wifi Wifi Service Dashboard:  ' + $('#wifi_dash_note').val()+ '\n'
 					}					
 					if($('#wifi_laptop_note').val()) {
-						report = report + '\n&lt;br />' + 'Wifi Test Laptop:  ' + $('#wifi_laptop_note').val()
+						report = report +  'Wifi Test Laptop:  ' + $('#wifi_laptop_note').val()+ '\n'
 					}
 					// if($('#wifi_spirent_note').val()) {
 						// report = report + '\n&lt;br />' + 'Wifi Spirent Probe:  ' + $('#wifi_spirent_note').val()
 					// }
-					
-					$('#tab12').html('<div class="alert alert-success"> Dieser HTML formatierter Text kann direkt als Ergebniss in die Excel Tabelle eingetragen werden.  </div>\n<br /><pre class="prettyprint linenums">' + report +'</pre>');
+					report = report + "</pre>"
+					$('#tab12').html('<div class="alert alert-success"> HTML Formatierung aufgrund Workspace entfernt  </div>\n<br /><pre class="prettyprint linenums">' + report +'</pre>');
 				}
 				
 				// Set the name for the next tab
